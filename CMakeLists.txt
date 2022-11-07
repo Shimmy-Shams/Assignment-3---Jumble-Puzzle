@@ -9,4 +9,4 @@ add_executable(Assignment_3___Jumble_Puzzle
         .idea/modules.xml
         .idea/vcs.xml
         .idea/workspace.xml
-        testJumble.cpp)
+        testJumble.cpp jumble_19srs12.h jumplePuzzle_19srs12.cpp)
