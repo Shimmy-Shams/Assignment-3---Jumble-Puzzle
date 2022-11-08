@@ -44,7 +44,7 @@ public:
     // Overloading the Assignment Operator
     JumblePuzzle& operator = (const JumblePuzzle&);
 
-    charArrayPtr* getJumble();      // Gets the matrix
+    charArrayPtr* getJumble() const;      // Gets the matrix
     int getSize() const;            // Gets the size for the matrix
     int getRowPos() const;     // Gets the position of the rows
     int getColPos() const;     // Gets the position of the columns

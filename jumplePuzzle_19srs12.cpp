@@ -4,10 +4,8 @@
 //
 
 #include "jumble_19srs12.h"
-#include <sstream>
 #include <iostream>
 #include <stdlib.h>
-#include <stdio.h>
 #include <time.h>
 
 using namespace std;
@@ -22,7 +20,20 @@ int JumblePuzzle::getSize() const { return size; }
 int JumblePuzzle::getRowPos() const { return row; }
 int JumblePuzzle::getColPos() const { return column; }
 char JumblePuzzle::getDirection() const { return direction; }
-charArrayPtr* JumblePuzzle::getJumble() { return matrix; }
+charArrayPtr* JumblePuzzle::getJumble() const {
+    charArrayPtr* newMatrix = new char*[size];
+
+    for (int i = 0; i < size; i++)
+        newMatrix[i] = new char[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+            newMatrix[i][j] = matrix[i][j];
+    }
+
+    return newMatrix;
+}
 
 
 // ##-------------- Main Constructor ---------------##
@@ -70,7 +81,7 @@ JumblePuzzle::JumblePuzzle(const string& word, const string& difficulty) {
 
     while (!placeWord){
 
-        // Picking a random diredction
+        // Picking a random direction
         direction = dir [rand() % 4];
 
         // Placing the characters going upward
