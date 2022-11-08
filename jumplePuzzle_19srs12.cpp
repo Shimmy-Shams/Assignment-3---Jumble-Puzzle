@@ -19,8 +19,8 @@ string& BadJumbleException::what() { return message; }
 
 // ##----------- Accessor Methods ------------##
 int JumblePuzzle::getSize() const { return size; }
-int JumblePuzzle::getRowPosition() const { return row; }
-int JumblePuzzle::getColPosition() const { return column; }
+int JumblePuzzle::getRowPos() const { return row; }
+int JumblePuzzle::getColPos() const { return column; }
 char JumblePuzzle::getDirection() const { return direction; }
 charArrayPtr* JumblePuzzle::getJumble() { return matrix; }
 
@@ -34,7 +34,6 @@ JumblePuzzle::JumblePuzzle(const string& word, const string& difficulty) {
         throw BadJumbleException("Invalid difficulty selection. Difficulty selection must be easy, medium or hard.");
 
     this-> difficulty = difficulty;
-    hiddenword = word;
 
     // setting the difficulty levels
     if (difficulty == "hard")
@@ -148,8 +147,8 @@ JumblePuzzle::JumblePuzzle(const string& word, const string& difficulty) {
 // ##-------------- Copy Constructor ---------------##
 JumblePuzzle::JumblePuzzle(const JumblePuzzle& jp) {
     size = jp.getSize();
-    row = jp.getRowPosition();
-    column = jp.getColPosition();
+    row = jp.getRowPos();
+    column = jp.getColPos();
     direction = jp.getDirection();
 
     // Creating individual arrays on the heap and copying values into matrix from other JumblePuzzle
@@ -168,8 +167,8 @@ JumblePuzzle::JumblePuzzle(const JumblePuzzle& jp) {
 // ## -------------- Overloading Assignment Operator --------------##
 JumblePuzzle& JumblePuzzle::operator = (const JumblePuzzle& jp) {
     if (this != &jp) {
-        row = jp.getRowPosition();
-        column = jp.getColPosition();
+        row = jp.getRowPos();
+        column = jp.getColPos();
         size = jp.getSize();
         direction = jp.getDirection();
 

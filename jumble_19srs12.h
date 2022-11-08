@@ -46,8 +46,8 @@ public:
 
     charArrayPtr* getJumble();      // Gets the matrix
     int getSize() const;            // Gets the size for the matrix
-    int getRowPosition() const;     // Gets the position of the rows
-    int getColPosition() const;     // Gets the position of the columns
+    int getRowPos() const;     // Gets the position of the rows
+    int getColPos() const;     // Gets the position of the columns
     char getDirection() const;      // Fetches direction of the rest of the word from the user
 
 private:
