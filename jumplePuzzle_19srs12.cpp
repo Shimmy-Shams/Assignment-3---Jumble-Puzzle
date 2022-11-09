@@ -31,7 +31,6 @@ charArrayPtr* JumblePuzzle::getJumble() const {
         for (int j = 0; j < size; j++)
             newMatrix[i][j] = matrix[i][j];
     }
-
     return newMatrix;
 }
 
@@ -44,7 +43,6 @@ JumblePuzzle::JumblePuzzle(const string& word, const string& difficulty) {
     if (difficulty != "easy" && difficulty != "medium" && difficulty != "hard")
         throw BadJumbleException("Invalid difficulty selection. Difficulty selection must be easy, medium or hard.");
 
-    this-> difficulty = difficulty;
 
     // setting the difficulty levels
     if (difficulty == "hard")
